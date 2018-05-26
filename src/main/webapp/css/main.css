@@ -111,3 +111,34 @@
     overflow: auto;
     box-sizing: border-box;
 }
+
+#FeatureInfoContainer> table{
+    font-family: Arial,Verdana,Times;
+    font-size: 12px;
+    text-align: left;
+    width: 100%;
+    border-collapse: collapse;
+    padding: 3px 3px 3px 3px;
+}
+#FeatureInfoContainer>table th{
+    font-weight: bold;
+    background: #9CBCE2;
+}
+#FeatureInfoContainer>div.InfoTitle{
+    font-size:110%;
+    background: #9CBCE2;
+    padding:0.4em 0;  
+    font-weight:bold;
+}
+#FeatureInfoContainer>div.InfoSubTitle{
+    padding-bottom: 0.5em;
+    color: gray;
+}
+
+tr{
+    background-color:white;
+}
+
+#FeatureInfoContainer>table tr:nth-child(odd){
+    background: #D4E4F3;
+}
