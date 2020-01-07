@@ -27,6 +27,11 @@ module.exports = {
       jQuery: 'jquery',
       'window.jQuery': 'jquery'
     })
-  ]
+  ],
+  devServer: {
+    contentBase: __dirname,
+    compress: true,
+    port: 9000
+  }
 };
 
