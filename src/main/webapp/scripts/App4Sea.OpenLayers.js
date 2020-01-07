@@ -223,7 +223,17 @@ const App4SeaOpenLayers = (function () {
     });
     my.Map.addControl(ctrl);
     my.Map.addControl(new OverviewMap({
-      layers: [currentLayer],
+      layers: [
+        new TileLayer({
+          name: 'esriWSPTileLayer',
+          crossOriginKeyword: 'anonymous',
+          source: new XYZ({
+            attributions: ['&copy; <a href="https://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/0">ArcGIS World Street Map</a>'],
+            // //                rendermode: 'image',
+            url: 'https://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',
+          }),
+        })
+      ],
       collapsed: true,
     }));
     my.Map.addControl(new ScaleLine());// Not correct scale
