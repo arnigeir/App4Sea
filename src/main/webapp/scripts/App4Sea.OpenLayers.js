@@ -56,6 +56,8 @@ const App4SeaOpenLayers = (function () {
 
     InitPopup();
 
+    my.Map.updateSize();
+
     // let res = App4Sea.Utils.supports_html5_storage();
     // if (App4Sea.logging) console.log("Support for html5 local storage: " + res);
   };
