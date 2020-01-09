@@ -13,13 +13,14 @@ Web app for mobiles for oil spill response information
 2. npm ci
 3. npm run build
 
-This builds the application to `dist/app4sea_bundle.js`.
+This builds the entire application to `dist/`.
 
 ## Development server
 
-Using python from `src/main/webapp`:
-
 ```sh
-$ python -m http.server 8080
+$ npm start -- -w
 ```
+
+This starts a server at http://localhost:9000 while watching for changes and
+rebuilding and reloading as necessary.
 

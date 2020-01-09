@@ -1,8 +1,10 @@
 var webpack = require("webpack");
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: 'development',
-  entry: './scripts/main.js',
+  entry: './src/main.js',
   output: {
     filename: 'app4sea_bundle.js',
     path: __dirname + '/dist',
@@ -26,7 +28,22 @@ module.exports = {
       $: 'jquery',
       jQuery: 'jquery',
       'window.jQuery': 'jquery'
+    }),
+    new CopyWebpackPlugin([
+      { from: 'src/css', to: 'css/' },
+      { from: 'src/static', to: 'static/' },
+      { from: 'src/images', to: 'images/' },
+      { from: 'src/json', to: 'json/' },
+      { from: 'src/favicon.ico' },
+    ]),
+    new HtmlWebpackPlugin({
+      template: 'src/index.html'
     })
-  ]
+  ],
+  devServer: {
+    contentBase: __dirname + '/src',
+    compress: true,
+    port: 9000
+  }
 };
 
